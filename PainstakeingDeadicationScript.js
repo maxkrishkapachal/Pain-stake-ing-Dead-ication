@@ -75,7 +75,7 @@ var story = {
         ]
     },
     sun: {
-        title: "Draw Them Into The Sun.",
+        title: "Draw Them Into The Sun",
         story: `You drag your sister, Sawyer, down the street toward the new flower shop, beaming the 
                 entire way, because you are a genius with a genius plan. The sun is beating down on you 
                 and Sawyer's wrist is leaking sweat into your hand, but you're not deterred. In fact, 
@@ -96,6 +96,25 @@ var story = {
             {choice: '"Race you to the other side of the street!"'},
             {choice: '"What plant is this out front?"'},
             {choice: '"Can you believe this weather? Come feel how hot it is! No really, come feel it. I am serious. Isidro, come outside and feel the sun, Isidro."'}
+        ]
+    },
+    mirror: {
+        title: "Catch Their Lack of Reflection",
+        story: `This is it; the perfect plan. It is subtle. It is simple. It is genius. Sawyer can make 
+        fun of you all she wants, but this time you're going to get proof. Then she'll have to believe you.
+        <br>You're standing in the flower shop, scouting the place out, getting a feel for the layout. All
+        great hunters know how, of course. This is an operation in stealth, after all.
+        <br>"What's this stupid plan again?" Sawyer asks you. She's hardly paying attention.
+        <br>"First off," you mutter to her, "it's not stupid. Second, I'm trying to figure out the perfect
+        vantage point to place a mirror. Then, we can watch Isidro and Alastair walk by it, and when they
+        don't have reflections, you'll have your proof." You puff out your chect a little as you recount
+        your ingenious idea.
+        <br>Where is the perfect vantage point then?
+        `,
+        choices: [
+            {choice: 'Amongst the plant shelves.'},
+            {choice: 'On the door to the back.'},
+            {choice: 'In your hand so you can subtly check as you walk by.'}
         ]
     }
 }
