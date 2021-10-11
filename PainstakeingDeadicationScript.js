@@ -1,4 +1,4 @@
-
+var playerName = "";
 
 function load(){
     document.getElementById("start-the-game").style.visibility = "hidden";
@@ -7,6 +7,7 @@ function load(){
         var content = document.querySelector('#content')
         document.querySelector('#name-button').addEventListener('click', function () {
             console.log(input.value);
+            playerName = input.value;
             document.getElementById('vampire-hunter-name').innerText = "Boom: " + input.value + " the vampire hunter.";
             document.getElementById("start-the-game").style.visibility = "visible";
         })
@@ -115,6 +116,38 @@ var story = {
             {choice: 'Amongst the plant shelves.'},
             {choice: 'On the door to the back.'},
             {choice: 'In your hand so you can subtly check as you walk by.'}
+        ]
+    },
+    cross: {
+        title: 'Approach Them With Crosses',
+        story: `"${playerName}, please," Sawyer begged.
+        <br>"This will work!" you argue back.
+        <br>She looks at you with pain in her eyes. "No. It won't."
+        <br>But you're going to do it anyway! "Trust me on this," you say proudly, and then without another
+        word, you march right into the flower shop, leaving your poor, embarrassed sister standing on the 
+        street. You step right up to Alastair, who is watering a couple of plants on a shelf, minding his
+        own business entirely. He turns to greet you with a small smile, still watering the plant as he nods.
+        He is a man of few words, so you understand he's waiting for you to speak first. 
+        <br>You don't speak though. You just stand there. And he stands there. And you stare at him. 
+        And he stares at you. Nothing is happening. Alastair's smile is straining more and more the longer 
+        you just stand there, looking like an idiot.
+        <br>The thing is, before making your way over to the shop, you decided to deck yourself out in as
+        many crosses as you could get your hands on. You bought a shirt covered in cross designs. Each pocket
+        on your jeans holds a large metal cross that you borrowed from the local church. There are paper
+        crosses taped to the toes of both your shoes. Your mother's cross earrings are looped around your ears
+        since your ears aren't pierced. You've also borrowed hers and Sawyer's cross necklaces. You've taped
+        another paper cross to your wide-brimmed bucket hat. You're carrying a Bible, also borrowed from the 
+        church.
+        <br>And it's the craziest thing because Alastair has not moved a muscle. He hasn't flinched, or hissed,
+        or anything! He's just standing there!
+        <br>"Do you require assistance?" Alastair eventually asks in his whispery voice, looking slightly
+        uncomfortable.
+        <br>In response, you say:
+        `,
+        choice: [
+            {choice: '"No,", and you walk away.'},
+            {choice: '"Yes," and you stare at him harder.'},
+            {choice: 'Nothing, you just sprint out of the shop.'}
         ]
     }
 }
