@@ -1,0 +1,36 @@
+body{
+    background-color: black;
+}
+
+* {
+    text-align: center;
+    padding: 2ex;
+}
+
+h1, h2, h3, label, button {
+    font-family:'Courier New', Courier, monospace;
+    color: rosybrown;
+    font-weight: bold;
+}
+
+button{
+    background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	outline: inherit;
+}
+
+input{
+    color:rosybrown; 
+    font-family:'Courier New', Courier, monospace; 
+    font-weight: bold; 
+    background-color:maroon;
+    height: 5ex;
+}
+
+label[id='vampire-hunter-name'] {
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: rosybrown;
+}
