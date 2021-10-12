@@ -95,9 +95,12 @@ function getStory(playerName){
                     him to come outside?
                     `,
             choices: [
-                {choice: '"Race you to the other side of the street!"'},
-                {choice: '"What plant is this out front?"'},
-                {choice: '"Can you believe this weather? Come feel how hot it is! No really, come feel it. I am serious. Isidro, come outside and feel the sun, Isidro."'}
+                {choice: '"Race you to the other side of the street!"',
+                destination: 'race'},
+                {choice: '"What plant is this out front?"',
+                destination: 'whatPlant'},
+                {choice: '"Can you believe this weather? Come feel how hot it is! No really, come feel it. I am serious. Isidro, come outside and feel the sun, Isidro."',
+                destination: 'comeOutside'}
             ]
         },
         mirror: {
@@ -114,9 +117,12 @@ function getStory(playerName){
             <br><br>Where is the perfect vantage point then?
             `,
             choices: [
-                {choice: 'Amongst the plant shelves.'},
-                {choice: 'On the door to the back.'},
-                {choice: 'In your hand so you can subtly check as you walk by.'}
+                {choice: 'Amongst the plant shelves.',
+                destination: 'plantShelves'},
+                {choice: 'On the door to the back.',
+                destination: 'onTheDoor'},
+                {choice: 'In your hand so you can subtly check as you walk by.',
+                destination: 'inYourHand'}
             ]
         },
         cross: {
@@ -145,10 +151,13 @@ function getStory(playerName){
             uncomfortable.
             <br><br>In response, you say:
             `,
-            choice: [
-                {choice: '"No,", and you walk away.'},
-                {choice: '"Yes," and you stare at him harder.'},
-                {choice: 'Nothing, you just sprint out of the shop.'}
+            choices: [
+                {choice: '"No,", and you walk away.',
+                destination: 'noCross'},
+                {choice: '"Yes," and you stare at him harder.',
+                destination: 'yesCross'},
+                {choice: 'Nothing, you just sprint out of the shop.',
+                destination: 'nothingCross'}
             ]
         },
         death: {
@@ -175,15 +184,99 @@ function getStory(playerName){
             <br><br>You gesture your hands, hoping to fumble your way into an explanation of what you're
             trying to say. 
             `,
-            choice: [
-                {choice: '"You must know a lot about life and death, huh, Alastair?"'},
+            choices: [
+                {choice: '"You must know a lot about life and death, huh, Alastair?"',
+                destination: 'lifeAndDeath'},
                 {choice: `"What I'm saying is that you've been around the block a couple times. A couple
                 too many blocks a couple to many times, if you catch my drift." Then you wink, but you don't
-                know how to wink, so it just looks like there's something stuck in your eye.`},
+                know how to wink, so it just looks like there's something stuck in your eye.`,
+                destination: 'aroundTheBlock'},
                 {choice: `"You're like a fine wine that only gets better with age, aren't you? Except you
-                don't age, and the wine is blood of the living, isn't it?`},
+                don't age, and the wine is blood of the living, isn't it?`,
+                destination: 'betterWithAge'},
                 {choice: `"Want to play a fun game? We both have to guess how many times the other one has
-                died! No cheating!" You waggle your finger at him.`}
+                died! No cheating!" You waggle your finger at him.`,
+                destination: 'funGame'}
+            ]
+        },
+        garlic: {
+            title: "Old Reliable: Garlic.",
+            story: `Alright, not to toot your own horn, but this has to be your most genius idea yet. You can't even
+            believe you didn't think of it sooner. Garlic! What were vampires most known for being repelled by? Garlic.
+            So smart.
+            <br><br>Unfortunately, Sawyer hadn't been around when you crafted this idea up, so you have to lead the
+            expedition without her. It'll be disappointing when you prove they're vampires and Sawyer isn't around to see
+            it, but that'll be nothing compared to the triumph you'll feel when you win. Okay, off you go!
+            <br><br>The original idea was that you would wear a necklace made of garlic, but you couldn't figure out how
+            to string the garlic together like that, and food isn't allowed in the flower shop anyway. Luckily, you're a
+            genius. You just ate a bunch of garlic and rubbed garlic cloves all over your wet hands so the stench would
+            stick. 
+            <br><br>Isidro and Alastair are, conveniently, both standing at the desk near the back of the shop, chatting
+            about whatever it is two vampires chat about. Blood, probably. You stride right on over to the counter, 
+            alerting the pair as soon as you're close enough.
+            <br><br>"Hey, ${playerName}!" Isidro grins at you. "What can we help you with?"
+            <br><br>You slam your elbows on the counter and lean in as close as possible. They both startle back, but you
+            are completely unbothered. "Yes, I was wondering where you keep the chrysanthemums," you breathily state,
+            purposely blowing the words in their faces.
+            <br><br>Alastair shrinks back, his nose scrunching up in disgust.
+            <br><br>Isidro does a better job hiding his revulsion, but he's still visibily biting his lip to keep from
+            gagging. "Yeah," he forces out. "They're near the front of the shop." He points, using his arm to hide his
+            face as politely as possible. There are tears in his eyes.
+            <br><br>"You don't want to come show me where?" you ask, smirking. You've caught them this time.
+            <br><br>Isidro stumbles back and shakes his head.
+            <br><br>Alastair tells you again, more hastily this time, "They're at the front."
+            <br><br>You cannot stop grinning. "Thank you!" And with that, you valiantly saunter out of the shop without 
+            a second thought about the chrysanthemums. Hahaha...Only vampires would react that strongly.
+            <br><br>Just then, someone comes running up behind you, shouting your name. "${playerName}!" You squint up
+            the road at the figure jogging towards you. Lo and behold, it's Sawyer! Just in time. "Dad told me you were 
+            at the flower shop again and I wanted to make sure Alastair and Isidro were okay," she tells you through her
+            panting.
+            <br><br>You beam with pride. "Don't worry about any of that because I just proved they're vampires!" you
+            announce.
+            <br><br>She recoils, a look of utter nauesea crossing her face. "Holy shit," she coughs. "Did something die
+            in your mouth?"
+            <br><br>You glare at her. "No! I just a lot of garlic!"
+            <br><br>"I can tell." She's backing away from you and pressing her nose to her elbow. "Please tell me you
+            did not go breathe on Isidro and Alastair smelling like that."
+            <br><br>Your gleaming grin returns and it tells her all she needs to know.
+            <br><br>"Are they still alive?" she raises an eyebrow.
+            <br><br>"Yup!" you say. "And it worked! I knew they were vampires. This is all just proof on top of proof,
+            and one of these days, it's going to add up to two vampires just like I said it would. Just you wait."
+            `
+        },
+        shadow: {
+            title: "Check For A Shadow",
+            story: `Once of the lesser known facts about vampires is that they don't have shadows. It sort of goes along
+            with the mirror reflection and sun burning things. You never notice their lack of a shadow because they dwell
+            in the dark. The shop, despite having such a sinister sounding name, was constantly brightly lit, so it was
+            nearly impossible to determine if either of the florists had shadows or not. That is why you have devised this
+            fool-proof plan. Your eyes follow Alastair's every move as he glides around the shop floor.
+            <br><br>Sawyer is standing over by the shelf of cacti, completely not listening to a word of your plan as you
+            mutter it under your breath at her. If she were listening, she would know about the little secret you have up
+            your sleeve. Literally! That's right, you stole a metal LED flashlight from your dad's toolkit for this plan!
+            <br><br>"What're you waiting for him to do?" she asks without looking away from the cactus she's poking.
+            <br><br>"Go near the wall..." you offhandedly mutter.
+            <br><br>She pauses and glances up at Alastair. "Why?"
+            <br><br>You were about to explain the plan to her all over again, but before you get the chance, Alastair is
+            on the move again. He sets his watering can down by the end of the aisle and floats over to the wall by the
+            back where there isn't as much light.
+            <br><br>You dart out from around the cactus shelf and race towards him. Just as you're about to reach him, you:
+            `,
+            choices: [
+                {choice: `Whip the flashlight you brought out of your sleeve and shine it directly in Alastair's eyes.`,
+                destination: 'shineFlashlight'},
+                {choice: `Attempt to reveal the flashlight but accidentally fling it into the ceiling light above you.`,
+                destination: 'flingFlashlight'},
+                {choice: `Trip and fall.`,
+                destination: 'tripAndFall'}
+            ]
+        },
+        bloodwine: {
+            title: "Catch Them Drinking Blood",
+            story: `
+            `,
+            choices: [
+                {choice: ''}
             ]
         }
     }
