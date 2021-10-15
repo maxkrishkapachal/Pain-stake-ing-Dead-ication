@@ -1,5 +1,4 @@
 
-
 function load(){
     document.getElementById("start-the-game").style.visibility = "hidden";
     document.addEventListener('DOMContentLoaded', function(){
@@ -18,7 +17,7 @@ function load(){
                 <label>Out of the blue, this couple moves into town and opens a flower shop. It's called The Crimson Rose. Already a little out there. One of them has an 'allergy' to the sun. Suspicious. They never want to talk about where they came from, or why they moved to such a small town. The weirdest part, however, is that they don't seem to exist. You never see them anywhere outside the flower shop. Never.</label>
                 <h2>About The Florists:</h2>
                 <h3>Isidro Cruorem</h3>
-                <label>Date of Birth: Probably the 1700's<br>Nationality: Cuban<br>Height: 5'11<br>Build: Lanky<br>Hair: Short, Brown<br>Eyes: Brown<br>Notable Characteristics: Scar on his neck<br>Vampire: Yes.</label>
+                <label>Date of Birth: Probably the 1900's<br>Nationality: Cuban<br>Height: 5'11<br>Build: Lanky<br>Hair: Short, Brown<br>Eyes: Brown<br>Notable Characteristics: Scar on his neck<br>Vampire: Yes.</label>
                 <h3>Alastair Cruorem</h3>
                 <label>Date of Birth: Definitely the 1300's<br>Nationality: Russian, I think. Maybe Italian?<br>Height: 5'8<br>Build: Muscular<br>Hair: Very Long, Black<br>Eyes: Grey<br>Notable Characteristics: Allergic to the sun<br>Vampire: Without a doubt.</label>
                 <h2>Gathering Proof</h2>
@@ -54,7 +53,7 @@ function getStory(playerName){
         currentScene: "vampirePlans",
         vampirePlans: {
             title: "What Vampire Hunting Technique are you going to go for now?",
-            story: "You look down at your list.",
+            story: "You look down at your list.<br>",
             choices: [
                 {choice: "Draw them out into the sun.",
                 destination: 'sun'},
@@ -74,7 +73,9 @@ function getStory(playerName){
                 destination: 'silver'},
                 {choice: "Get proof of their bite marks",
                 destination: 'bites'}
-            ]
+            ],
+            branch: 'branch',
+            read: "unread"
         },
         sun: {
             title: "Draw Them Into The Sun",
@@ -93,6 +94,7 @@ function getStory(playerName){
                     says, "Hey, guys. What's up?" 
                     <br>You suddenly realize you didn't think this far ahead. Quick, what should you say to get
                     him to come outside?
+                    <br>
                     `,
             choices: [
                 {choice: '"Race you to the other side of the street!"',
@@ -101,7 +103,77 @@ function getStory(playerName){
                 destination: 'whatPlant'},
                 {choice: '"Can you believe this weather? Come feel how hot it is! No really, come feel it. I am serious. Isidro, come outside and feel the sun, Isidro."',
                 destination: 'comeOutside'}
-            ]
+            ],
+            branch: 'branch',
+            read: 'unread'
+        },
+        race: {
+            title: `"Race you to the other side of the street!"`,
+            story: `you yell out franticallly while pointing. Isidro stares at you like you're crazy and he shuffles his
+            flip-flopped foot against the doorframe. This plan is rapidly falling apart and you need to do something to 
+            get him outside. So, before he can even answer, you start sprinting. You race out halfway across the street 
+            and glance back to see if he's following. Sure enough, he has also started running! This is fantastic! Is he 
+            burning up? Is his vampire skin reacting to the sun? Why does he look so afraid?
+            <br><br>These questions remain answerless because suddenly, a fire hydrant jumps out at you and you're
+            tumbling head first over the damn thing. Your hands break the fall and you gracelessly careen into the leg of
+            a nearby bench, smacking your elbow on it. You writhe in pain on the cement, your elbow and knee are throbbing,
+            and you blearily stare up at Isidro as he skids to a halt next to you.
+            <br><br>"There's a hydrant," he says, somewhat out of breath.
+            <br><br>"Thanks," you mumble.
+            <br><br>"Maybe we shouldn't race across the street," he suggests, attempting to help you up.
+            <br><br>You wave his hands away and continue laying on the sidewalk. You're not ready to get up, but on the
+            bright side, you can clearly see that Isidro is standing in the sun with his skin exposed and he is fine. 
+            He's fine. He's the same shade, he's the same complexion, he's just as moisturized as he always is. Nothing 
+            is different. He is not burning in the sun.
+            <br><br>You can see Sawyer in the distance with her arms crossed and her eyebrows raised. You don't even need
+            her to say anything for you to know she's mocking you about Isidro's lack of vampire behavious. We'll see.
+            <br>`,
+            branch: 'end',
+            read: 'unread'
+        },
+        whatPlant:{
+            title: '"What plant is this out front?"',
+            story: `you ask, flinging your hand out to a random plant.
+            <br><br>Isidro pokes his head around the doorframe, furrows his eyebrows, and then hums. He says "I'm actually,
+            not sure what that one is. Alastair would know." He steps cleanly out of the building and into the blistering
+            sun.His flipflops splat against the pavement as he meanders along to the pot and crouches down. After squinting
+            at the plant tag in the dirt, he announces, "This baby is a California Lilac!" and stands again.
+            <br><br>You cannot beleive this. He is just standing there in the sun! He's not even wearing a hat! You watch
+            as he wanders back inside and out of the sun, and as he passes by, you scrutinize his skin. It's normal! It's 
+            just as moisturized as it always is and completely unburned! Nothing is different. Unbelievable.
+            <br><br>"Is that all you needed?" Isidro asks once he's back in the shop.
+            <br><br>"Yeah, I think that's it. Thank you," Sawyer interrupts. She's staring at you though.
+            <br><br>Isidro nods and smiles. "Stay cool out there then!" he says. Then he is gone.
+            <br><br>"Wow. Yup. You really proved me wrong. That was a vampire if I ever saw one," Sawyer sarcastically 
+            drawls once he's out of earshot.
+            <br><br>"This means nothing. I'll still prove they're vampires, just you wait." You hurry quickly down the
+            sidewalk in the direction of your house once again to retrieve your list.
+            <br>
+            `,
+            branch: 'end',
+            read: 'unread'
+        },
+        comeOutside: {
+            title: '"Can you believe this weather? Come feel how hot it is! No really, come feel it. I am serious. Isidro, come outside and feel the sun, Isidro."',
+            story: `you say, trying not to sound too frantic.
+            <br><br>"Uh..." Isidro says, confused. "Yeah... it is..." He steps outside cautiously, as though you're a wild
+            animal that might pounce at any time. "It is hot out... Did you... want water...? Is that what this is about?" 
+            Isidro hesitantly asks.
+            <br><br>You're not paying attention to him though. Well, you are, but not what he's saying, rather his skin!
+            It's not burning! You can hardly believe it, but Isidro is merely standing there, in the blazing heat, and
+            not a thing is wrong with his skin. Not a thing. Aren't vampires supposed to burn in the sun? What kind of trick
+            is this?
+            <br><br>"No, thank you, Isidro. The problem isn't dehydration, it's idiocy," Sawyer sweetly says to Isidro since
+            you've been standing there without speaking for quite awhile now.
+            <br><br>Isidro nods like he understands what is happening, and then gives an awkward smile, says "Right. Well,
+            good chat. Stay cool out there!" and then he's back into the shop.
+            <br><br>"Wow. Yup. You really proved me wrong. That was a vampire if I ever saw one," Sawyer sarcastically 
+            drawls once he's out of earshot.
+            <br><br>"This means nothing. I'll still prove they're vampires, just you wait." You hurry quickly down the
+            sidewalk in the direction of your house once again to retrieve your list.
+            <br>`,
+            branch: 'end',
+            read: 'unread'
         },
         mirror: {
             title: "Catch Their Lack of Reflection",
@@ -115,6 +187,7 @@ function getStory(playerName){
             don't have reflections, you'll have your proof." You puff out your chect a little as you recount
             your ingenious idea.
             <br><br>Where is the perfect vantage point then?
+            <br>
             `,
             choices: [
                 {choice: 'Amongst the plant shelves.',
@@ -123,7 +196,27 @@ function getStory(playerName){
                 destination: 'onTheDoor'},
                 {choice: 'In your hand so you can subtly check as you walk by.',
                 destination: 'inYourHand'}
-            ]
+            ],
+            branch: 'branch',
+            read: 'unread'
+        },
+        plantShelves: {
+            title: "",
+            story: "",
+            branch: 'end',
+            read: 'unread'
+        },
+        onTheDoor: {
+            title: "",
+            story: "",
+            branch: 'end',
+            read: 'unread'
+        },
+        inYourHand: {
+            title: "",
+            story: "",
+            branch: 'end',
+            read: 'unread'
         },
         cross: {
             title: 'Approach Them With Crosses',
@@ -150,6 +243,7 @@ function getStory(playerName){
             <br><br>"Do you require assistance?" Alastair eventually asks in his whispery voice, looking slightly
             uncomfortable.
             <br><br>In response, you say:
+            <br>
             `,
             choices: [
                 {choice: '"No,", and you walk away.',
@@ -158,7 +252,27 @@ function getStory(playerName){
                 destination: 'yesCross'},
                 {choice: 'Nothing, you just sprint out of the shop.',
                 destination: 'nothingCross'}
-            ]
+            ],
+            branch: 'branch',
+            read: 'unread'
+        },
+        noCross: {
+            title: "",
+            story: "",
+            branch: 'end',
+            read: 'unread'
+        },
+        yesCross: {
+            title: "",
+            story: "",
+            branch: 'end',
+            read: 'unread'
+        },
+        nothingCross: {
+            title: "",
+            story: "",
+            branch: 'end',
+            read: 'unread'
         },
         death: {
             title: "Trick Them Into Revealing Their Immortality.",
@@ -183,6 +297,7 @@ function getStory(playerName){
             <br><br>"Are you meaning for a funeral...?" Alastair prods, his eyebrows slowly narrowing.
             <br><br>You gesture your hands, hoping to fumble your way into an explanation of what you're
             trying to say. 
+            <br>
             `,
             choices: [
                 {choice: '"You must know a lot about life and death, huh, Alastair?"',
@@ -197,7 +312,33 @@ function getStory(playerName){
                 {choice: `"Want to play a fun game? We both have to guess how many times the other one has
                 died! No cheating!" You waggle your finger at him.`,
                 destination: 'funGame'}
-            ]
+            ],
+            branch: 'branch',
+            read: 'unread'
+        },
+        lifeAndDeath: {
+            title: "",
+            story: "",
+            branch: 'end',
+            read: 'unread'
+        },
+        aroundTheBlock: {
+            title: "",
+            story: "",
+            branch: 'end',
+            read: 'unread'
+        },
+        betterWithAge: {
+            title: "",
+            story: "",
+            branch: 'end',
+            read: 'unread'
+        },
+        funGame: {
+            title: "",
+            story: "",
+            branch: 'end',
+            read: 'unread'
         },
         garlic: {
             title: "Old Reliable: Garlic.",
@@ -242,11 +383,14 @@ function getStory(playerName){
             <br><br>"Are they still alive?" she raises an eyebrow.
             <br><br>"Yup!" you say. "And it worked! I knew they were vampires. This is all just proof on top of proof,
             and one of these days, it's going to add up to two vampires just like I said it would. Just you wait."
-            `
+            <br>
+            `,
+            branch: 'end',
+            read: 'unread'
         },
         shadow: {
             title: "Check For A Shadow",
-            story: `Once of the lesser known facts about vampires is that they don't have shadows. It sort of goes along
+            story: `One of the lesser known facts about vampires is that they don't have shadows. It sort of goes along
             with the mirror reflection and sun burning things. You never notice their lack of a shadow because they dwell
             in the dark. The shop, despite having such a sinister sounding name, was constantly brightly lit, so it was
             nearly impossible to determine if either of the florists had shadows or not. That is why you have devised this
@@ -261,6 +405,7 @@ function getStory(playerName){
             on the move again. He sets his watering can down by the end of the aisle and floats over to the wall by the
             back where there isn't as much light.
             <br><br>You dart out from around the cactus shelf and race towards him. Just as you're about to reach him, you:
+            <br>
             `,
             choices: [
                 {choice: `Whip the flashlight you brought out of your sleeve and shine it directly in Alastair's eyes.`,
@@ -269,16 +414,171 @@ function getStory(playerName){
                 destination: 'flingFlashlight'},
                 {choice: `Trip and fall.`,
                 destination: 'tripAndFall'}
-            ]
+            ],
+            branch: 'branch',
+            read: 'unread'
+        },
+        shineFlashlight: {
+            title: "",
+            story: "",
+            branch: 'end',
+            read: 'unread'
+        },
+        flingFlashlight: {
+            title: "",
+            story: "",
+            branch: 'end',
+            read: 'unread'
+        },
+        tripAndFall: {
+            title: "",
+            story: "",
+            branch: 'end',
+            read: 'unread'
         },
         bloodwine: {
             title: "Catch Them Drinking Blood",
-            story: `
+            story: `You have crafted a very delicate and precise plan, and right now, you're on your way to enact this plan
+            at the flower shop. You told Sawyer all about this plan, and the entire time, she stared at you with a pleading
+            sort of look in her eyes. She doesn't want you to catch these vampires, it seems.
+            <br><br>You step through the door of the empty shop, the plan swirling in your mind. Inside, at the counter near 
+            the back of the store, is Isidro. He's standing there with a glass in his hand. You stop short. The glass is full
+            of blood. It's glimmering a deep red under the warm lights overhead. Your eyes are wide and your heart is beating
+            rapidly. This is it! You've found your proof!
+            <br><br>Isidro lifts the glass to his lips, about to take a sip. You have to stop him! With the original plan 
+            completely forgotten, you react! You:
+            <br>
             `,
             choices: [
-                {choice: ''}
-            ]
-        }
+                {choice: 'Throw the only thing in your hand! Quick!',
+                destination: 'throwPhone'},
+                {choice: 'Scream at the top of your lungs!',
+                destination: 'scream'},
+                {choice: 'Sprint towards the desk at top speed!',
+                destination: 'sprint'}
+            ],
+            branch: 'branch',
+            read: 'unread'
+        },
+        throwPhone: {
+            title: "",
+            story: "",
+            branch: 'end',
+            read: 'unread'
+        },
+        scream: {
+            title: "",
+            story: "",
+            branch: 'end',
+            read: 'unread'
+        },
+        sprint: {
+            title: "",
+            story: "",
+            branch: 'end',
+            read: 'unread'
+        },
+        silver: {
+            title: "Attempt To Burn Them With Silver.",
+            story: `Silver! Usually it' silver bullets that kill vampires, but according to your research, it can be any
+            silver thing. Besides, you're not trying to kill anyone here, you're just trying to prove vampiric status.
+            So, silver, but no bullets. Luckily, your mother has silver! She never lets you touch it, and it's always kept
+            locked up in a little cabinet by the kitchen, but locks have never been a problem for you, and they're not
+            going to start being a problem now.
+            <br><br>You're currently peering around the corner of the shop's doorframe to see who's around. Sawyer is at
+            your back, perplexed. Aha! You spot Isidro's fluffy, brown hair as the man shuffles around with a pot on the 
+            other side of a shelf. Alastair is nowhere to be seen. This is perfect! You were hoping to get Isidro anyway
+            since this required skin contact with a spoon and Alastair was always wearing gloves.
+            <br><br>As you swiftly approach Isidro, you realize the cards really aren't in your favour today, because
+            he's wearing gardening gloves. The only exposed parts of Isidro's skin are his neck and face. What should you 
+            do?
+            <br>
+            `,
+            choices: [
+                {choice: 'Touch the spoon to his neck.',
+                destination: 'spoonNeck'},
+                {choice: 'Touch the spoon to his cheek.',
+                destination: 'spoonCheek'},
+                {choice: 'Touch the spoon to his forehead.',
+                destination: 'spoonForehead'},
+                {choice: 'Convince him to take off his gloves, then touch the spoon to his hand.',
+                destination: 'spoonHand'}
+            ],
+            branch: 'branch',
+            read: 'unread'
+        },
+        spoonNeck: {
+            title: "",
+            story: "",
+            branch: 'end',
+            read: 'unread'
+        },
+        spoonCheek: {
+            title: "",
+            story: "",
+            branch: 'end',
+            read: 'unread'
+        },
+        spoonForehead: {
+            title: "",
+            story: "",
+            branch: 'end',
+            read: 'unread'
+        },
+        spoonHand: {
+            title: "",
+            story: "",
+            branch: 'end',
+            read: 'unread'
+        },
+        bites: {
+            title: "Get Proof of Their Bite Marks",
+            story: `Sawyer, despite thinking that this is all very foolish, is at least being a good sport on this day,
+            because you both have wandered past the front desk where Isidro and Alastair are working at least four times,
+            and you've tiptoed amongst the nearby shelves at least five times. The excuse you're going with is that you're
+            trying to inspect the wall decorations behind them.
+            <br><br>You aren't sneaky though. Both florists have asked if you need any help multiple times, but this has 
+            been going on for so long that they've decided to pretend they don't notice you at all. They are, after all, 
+            busy. The shop is buzzing with people.
+            <br><br>Sawyer has no idea what you're both looking for, but you do! Bite marks! You just have to get a good
+            look, and that feels impossible since you can't see either of their necks. Isidro moves around a lot and 
+            often wears high-collared sweaters. Alastair just has very long hair that covers his neck quite well.
+            <br><br>You're suddenly able to catch a glimpse of Alastair's neck when he runs his hand through his hair,
+            but there are no markings that would indicate anything vampire-like, even as you squint uncomfortably while
+            passing by them for a fifth time. Alastair glowers at you, causing your rubber-necking to quickly cease.
+            <br><br>Your hunt moves on to Isidro. Right as you're about to give up, Isidro moves to write something down,
+            and as he does, he reaches up to itch the back of his neck. The collar of his sweater is pulled down. 
+            <br><br>And there it is! Clear as day: a bite mark! Before he can pull his collar up, you:
+            `,
+            choices: [
+                {choice: `Yell out, "Aha! There, Sawyer! Bite marks!"`,
+                destination: 'biteMarksYell'},
+                {choice: `Quietly tell the florists, "Hee hee hee! I know your secret! I saw your bite marks!"`,
+                destination: 'biteMarksWhisper'},
+                {choice: `Say nothing and instead point vigorously while staring intensely at Sawyer.`,
+                destination: 'biteMarksPoint'}
+            ],
+            branch: 'branch',
+            read: 'unread'
+        },
+        biteMarksYell: {
+            title: "",
+            story: "",
+            branch: 'end',
+            read: 'unread'
+        },
+        biteMarksWhisper: {
+            title: "",
+            story: "",
+            branch: 'end',
+            read: 'unread'
+        },
+        biteMarksPoint: {
+            title: "",
+            story: "",
+            branch: 'end',
+            read: 'unread'
+        },
     }
 }
 
@@ -288,22 +588,39 @@ function getChoices(){
         return "";
     }
     for(var i = 0; i < story[story.currentScene].choices.length; i++){
-        input += `
-        <br>
-            <input data-destination=${story[story.currentScene].choices[i].destination} id="radio${i}" type="radio" name="choices"/>
-            <label for "radio${i}">${story[story.currentScene].choices[i].choice}</label>
-        `
+        var tempStory = story[story.currentScene].choices[i].destination;
+        if(story[tempStory].read == "unread"){
+            input += `
+            <br>
+                <input data-destination=${story[story.currentScene].choices[i].destination} id="radio${i}" type="radio" name="choices"/>
+                <label for "radio${i}">${story[story.currentScene].choices[i].choice}</label>
+            `
+        }
+        else if(story[tempStory].read == "read"){
+            console.log("Hello");
+            input += `
+            <br>
+                <label><s>${story[story.currentScene].choices[i].choice}</s></label>
+            `
+        }
     }
     return input;
 }
 
 function getChoicesValues(){
     var inputs = document.querySelectorAll('input[type="radio"]');
+    var count = 0;
     for(var i = 0; i < inputs.length; i++){
         if(inputs[i].checked){
+            count++;
+            if(story.currentScene != "vampirePlans") story[story.currentScene].read = "read";
             story.currentScene = inputs[i].getAttribute('data-destination');
             renderScene();
         }
+    }
+    if(count == 0 && story[story.currentScene].branch == 'end'){
+        story.currentScene = "vampirePlans";
+        renderScene();
     }
 }
 
