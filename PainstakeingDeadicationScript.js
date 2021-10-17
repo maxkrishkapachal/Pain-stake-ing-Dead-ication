@@ -201,20 +201,56 @@ function getStory(playerName){
             read: 'unread'
         },
         plantShelves: {
-            title: "",
-            story: "",
+            title: "Amongst The Plant Shelves",
+            story: `You look across at the plant shelves. Yes. There isn't a more perfect spot to place a secret mirror 
+            than right there. You're about to tell Sawyer all about your genius when she cuts you off.
+            <br><br>"Yeah, that's cool and all, but there's a mirror on that wall already, and they put it up themselves."
+            <br><br>Sputtering, you stare across the room to see a giant aesthetic mirror hanging on the wall behind
+            the checkout counter. Isidro, who is standing at the register, wipes the dirt off the counter, unaware that 
+            you're watching him. Clear as day, in the mirror, you can see the back of Isidro's head reflected. You jaw falls
+            open.
+            <br><br>A moment later, Alastair wanders over to speak with Isidro, putting himself perfectly in line with the
+            mirror. The side of his face is visible in the reflection, along with his hair and the slight wave of his hand
+            as he gestures towards something.
+            <br><br>You stare at them a moment longer, then back at Sawyer, who is watching you with a smirk. You sneer and
+            stomp out of the store, determined.
+            `,
             branch: 'end',
             read: 'unread'
         },
         onTheDoor: {
-            title: "",
-            story: "",
+            title: "On The Door To The Back",
+            story: `You look across at the door to the back room. Yes. There isn't a more perfect spot to place a secret mirror 
+            than right there. You're about to tell Sawyer all about your genius when she cuts you off.
+            <br><br>"Yeah, that's cool and all, but there's a mirror on that wall already, and they put it up themselves."
+            <br><br>Sputtering, you stare across the room to see a giant aesthetic mirror hanging on the wall behind
+            the checkout counter. Isidro, who is standing at the register, wipes the dirt off the counter, unaware that 
+            you're watching him. Clear as day, in the mirror, you can see the back of Isidro's head reflected. You jaw falls
+            open.
+            <br><br>A moment later, Alastair wanders over to speak with Isidro, putting himself perfectly in line with the
+            mirror. The side of his face is visible in the reflection, along with his hair and the slight wave of his hand
+            as he gestures towards something.
+            <br><br>You stare at them a moment longer, then back at Sawyer, who is watching you with a smirk. You sneer and
+            stomp out of the store, determined.
+            `,
             branch: 'end',
             read: 'unread'
         },
         inYourHand: {
-            title: "",
-            story: "",
+            title: "In Your Hand So You Can Subtly Check As You Walk By.",
+            story: `You look across at the plant shelves. Yes. There isn't a more perfect spot to place a secret mirror 
+            than right there. You're about to tell Sawyer all about your genius when she cuts you off.
+            <br><br>"Yeah, that's cool and all, but there's a mirror on that wall already, and they put it up themselves."
+            <br><br>Sputtering, you stare across the room to see a giant aesthetic mirror hanging on the wall behind
+            the checkout counter. Isidro, who is standing at the register, wipes the dirt off the counter, unaware that 
+            you're watching him. Clear as day, in the mirror, you can see the back of Isidro's head reflected. You jaw falls
+            open.
+            <br><br>A moment later, Alastair wanders over to speak with Isidro, putting himself perfectly in line with the
+            mirror. The side of his face is visible in the reflection, along with his hair and the slight wave of his hand
+            as he gestures towards something.
+            <br><br>You stare at them a moment longer, then back at Sawyer, who is watching you with a smirk. You sneer and
+            stomp out of the store, determined.
+            `,
             branch: 'end',
             read: 'unread'
         },
@@ -257,14 +293,34 @@ function getStory(playerName){
             read: 'unread'
         },
         noCross: {
-            title: "",
-            story: "",
+            title: `"No," And You Walk Away`,
+            story: `You don't speak for a moment, still studying Alastair's face for vampiric signs. Nothing. "No," you
+            finally say after an unsettling length of time. You spin on your heel and march back out, hiking the Bible 
+            under your armpit a little farther.
+            <br><br>"That was actually one of the most painful things I've ever witnessed," Sawyer says once you've
+            exited the shop again.
+            <br><br>You squint into the middle distance. "He did look bothered by it though. That could have been a sign
+            that it was working."
+            <br><br>Sawyer stares at you incredulously. "I would be bothered too if some whackjob with a million crosses
+            just came up and stared at me," she says.
+            <br><br>You're not listening. This is a step in the right direction.
+            `,
             branch: 'end',
             read: 'unread'
         },
         yesCross: {
-            title: "",
-            story: "",
+            title: '"Yes," And You Stare At Him Harder."',
+            story: `You don't speak for a moment, still studying Alastair's face for vampiric signs. Nothing. "No," you
+            finally say after an unsettling length of time. You spin on your heel and march back out, hiking the Bible 
+            under your armpit a little farther.
+            <br><br>"That was actually one of the most painful things I've ever witnessed," Sawyer says once you've
+            exited the shop again.
+            <br><br>You squint into the middle distance. "He did look bothered by it though. That could have been a sign
+            that it was working."
+            <br><br>Sawyer stares at you incredulously. "I would be bothered too if some whackjob with a million crosses
+            just came up and stared at me," she says.
+            <br><br>You're not listening. This is a step in the right direction.
+            `,
             branch: 'end',
             read: 'unread'
         },
